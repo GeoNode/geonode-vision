@@ -57,3 +57,7 @@ GeoNode should be built to support multiple data providers, including:
 - [Solr](https://lucene.apache.org/solr/),
 - [Elasticsearch](https://www.elastic.co/products/elasticsearch)/[ElasticGeo](https://github.com/ngageoint/elasticgeo), and
 - [GeoMesa](http://www.geomesa.org/).
+
+**Implementation**
+
+Django's [PostgreSQL contrib app](https://docs.djangoproject.com/en/1.11/ref/contrib/postgres/fields/) may provide flexibility we can leverage to avoid overly complicated database models while still covering multiple data providers.  For example, we could use a single [HstoreField](https://docs.djangoproject.com/en/1.11/ref/contrib/postgres/fields/#django.contrib.postgres.fields.HStoreField) to store a dict of backend authentication parameters.
