@@ -1,4 +1,4 @@
-# Draft GeoNode 3.0 Vision Statement
+# Draft GeoNode 4.0 Vision Statement
 
 This is a draft vision statement for GeoNode 3.0 provided for community discussion and collaboration.  It is purely for guiding discusion and not fixed.  The vision consists of the following reinforcing principles:
 
@@ -14,11 +14,12 @@ Essentially:
 
 - GeoNode 1 was a proof of concept.
 - GeoNode 2 is a working product.
-- GeoNode 3 is a scalable product.
+- GeoNode 3 is a working product based on Python 3 and Django 2.
+- GeoNode 4 is a scalable product.
 
 # Django
 
-GeoNode 3.0, as the previous versions, will continue to be built on [Django](https://www.djangoproject.com/).  However, it's usage of Django will adapt to the modern software environment.  The community-supported GeoNode version will continue to use [PostGIS](http://postgis.net/) as the recommended database for Django.
+GeoNode 4.0, as the previous versions, will continue to be built on [Django](https://www.djangoproject.com/).  However, it's usage of Django will adapt to the modern software environment.  The community-supported GeoNode version will continue to use [PostGIS](http://postgis.net/) as the recommended database for Django.
 
 # Minimal Core
 
@@ -26,15 +27,15 @@ The future **core** Django python library of GeoNode should be minimal and consi
 
 # Behavior Driven Development
 
-GeoNode 3.0 should adopt a [behavior driven development](https://en.wikipedia.org/wiki/Behavior_Driven_Development) approach.  All features are described as behavioral tests using Python [Behave](http://pythonhosted.org/behave/index.html) or similar library.  These behaviors, all together, describe the entire API surface.
+GeoNode 4.0 should adopt a [behavior driven development](https://en.wikipedia.org/wiki/Behavior_Driven_Development) approach.  All features are described as behavioral tests using Python [Behave](http://pythonhosted.org/behave/index.html) or similar library.  These behaviors, all together, describe the entire API surface.
 
 # Fresh Start
 
-GeoNode 3.0 codebase should be it's own separate repo.  Code, including core database models, will be ported over to the new codebase as needed.  Fresh CSW, security, etc. sub-systems will be incorporated over time.
+GeoNode 4.0 codebase should be it's own separate repo.  Code, including core database models, will be ported over to the new codebase as needed.  Fresh CSW, security, etc. sub-systems will be incorporated over time.
 
 # Web UI Framework Agnostic
 
-GeoNode 3.0 should support [Angular](https://angular.io/), [React](https://facebook.github.io/react/), [Preact](https://preactjs.com/), or [Vue.js](https://vuejs.org/) by being web UI agnostic.  All interaction with the GeoNode app server should take place via well documented (REST) APIs.  Common front-end components should be managed within their own relevant ecosystem (Angular Modules, etc.) rather than as Django apps.  They'll be no community support for instances based on Django html templates.
+GeoNode 4.0 should support [Angular](https://angular.io/), [React](https://facebook.github.io/react/), [Preact](https://preactjs.com/), or [Vue.js](https://vuejs.org/) by being web UI agnostic.  All interaction with the GeoNode app server should take place via well documented (REST) APIs.  Common front-end components should be managed within their own relevant ecosystem (Angular Modules, etc.) rather than as Django apps.  They'll be no community support for instances based on Django html templates.
 
 **Rationale**
 
@@ -46,7 +47,7 @@ Today, modern websites are built on one of the common web UI frameworks and [RES
 
 The **core** codebase will take an API-first approach likely using [Django REST Framework](http://www.django-rest-framework.org/) (DRF) w/ support for [Swagger UI](https://swagger.io/swagger-ui/).
 
-Since GeoNode 3.0 will be web UI agnostic, a common gateway will be used to interact with the GeoNode backend (based on the API first approach) rather than APIs for specific web UI frameworks.
+Since GeoNode 4.0 will be web UI agnostic, a common gateway will be used to interact with the GeoNode backend (based on the API first approach) rather than APIs for specific web UI frameworks.
 
 # Support for Multiple Data Providers
 
