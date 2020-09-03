@@ -47,8 +47,9 @@ Today, modern websites are built on one of the common web UI frameworks and [RES
 
 The **core** codebase will take an API-first approach likely using [Django REST Framework](http://www.django-rest-framework.org/) (DRF) w/ support for [Swagger UI](https://swagger.io/swagger-ui/). Hereby two seperate but interoperable APIs will be delivered:
 
-a) GeoNode REST API for GeoNode centric objects, like identity management, dashboard, datasets and there alike
-b) OGCAPI based API for example delivered by pygeoapi
+   a) GeoNode REST API for GeoNode centric objects, like identity management, dashboard, datasets and there alike
+   
+   b) OGCAPI based API for example delivered by pygeoapi
 
 Both APIs coexist and are loosely coupled.
 
