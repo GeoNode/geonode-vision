@@ -23,7 +23,7 @@ GeoNode 4.0, as the previous versions, will continue to be built on [Django](htt
 
 # Minimal Core
 
-The future **core** Django python library of GeoNode should be minimal and consist of only support for database models and API views.  Front-end code, assets, etc. should be independent of the core Django application codebase.  This core will include at least layers, maps, and documents.
+The future **core** Django python library of GeoNode should be minimal and consist of only support for database models and GeoNode centric API views.  Front-end code, assets, etc. will be independent of the core Django application codebase.  This core will include at least layers, maps, and documents and define the concept of a dataset.
 
 # Behavior Driven Development
 
@@ -35,7 +35,7 @@ GeoNode 4.0 codebase should be it's own separate repo.  Code, including core dat
 
 # Web UI Framework Agnostic
 
-GeoNode 4.0 should support [Angular](https://angular.io/), [React](https://facebook.github.io/react/), [Preact](https://preactjs.com/), or [Vue.js](https://vuejs.org/) by being web UI agnostic.  All interaction with the GeoNode app server should take place via well documented (REST) APIs.  Common front-end components should be managed within their own relevant ecosystem (Angular Modules, etc.) rather than as Django apps.  They'll be no community support for instances based on Django html templates.
+GeoNode 4.0 should support [Angular](https://angular.io/), [React](https://facebook.github.io/react/), [Preact](https://preactjs.com/), or [Vue.js](https://vuejs.org/) by being web UI agnostic.  All interaction with the GeoNode app server should take place via well documented (REST) APIs - based on the OpenAPI specification.  Common front-end components should be managed within their own relevant ecosystem (React Components, Angular Modules, etc.) rather than as Django apps.  They'll be no community support for instances based on Django html templates.
 
 **Rationale**
 
@@ -45,9 +45,14 @@ Today, modern websites are built on one of the common web UI frameworks and [RES
 
 # API First & API Gateway
 
-The **core** codebase will take an API-first approach likely using [Django REST Framework](http://www.django-rest-framework.org/) (DRF) w/ support for [Swagger UI](https://swagger.io/swagger-ui/).
+The **core** codebase will take an API-first approach likely using [Django REST Framework](http://www.django-rest-framework.org/) (DRF) w/ support for [Swagger UI](https://swagger.io/swagger-ui/). Hereby two seperate but interoperable APIs will be delivered:
 
-Since GeoNode 4.0 will be web UI agnostic, a common gateway will be used to interact with the GeoNode backend (based on the API first approach) rather than APIs for specific web UI frameworks.
+a) GeoNode REST API for GeoNode centric objects, like identity management, dashboard, datasets and there alike
+b) OGCAPI based API for example delivered by pygeoapi
+
+Both APIs coexist and are loosely coupled.
+
+Since GeoNode 4.0 will be web UI agnostic, a common gateway will be used to interact with the GeoNode backend (based on the API first approach) rather than APIs for specific web UI frameworks. Since there are two APIs (OGC and GeoNode) the developed clients could pick the needed interfaces as their need.
 
 # Support for Multiple Data Providers
 
